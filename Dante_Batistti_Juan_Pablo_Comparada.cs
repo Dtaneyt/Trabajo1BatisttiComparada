@@ -4,6 +4,9 @@ class Program {
     static string alfabeto = "abcdefghijklmñnopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890_-+,#$%&/()=¿?¡!|,.;:{}[]";
 
     static void Main() {
+        Console.WriteLine("Ingrese la distancia del cifrado:");
+        int distancia = int.Parse(Console.ReadLine());
+
         Console.WriteLine("Ingrese la frase a cifrar:");
         string mensajeOriginal = Console.ReadLine();
 
@@ -12,13 +15,13 @@ class Program {
             mensajeOriginal = Console.ReadLine();
         }
 
-        string mensajeCifrado = Cifrar(mensajeOriginal, 7);
+        string mensajeCifrado = Cifrar(mensajeOriginal, distancia);
         Console.WriteLine("Mensaje cifrado: " + mensajeCifrado);
 
         Console.WriteLine("\nIngrese el mensaje cifrado para descifrar:");
         string mensajeCifradoInput = Console.ReadLine();
 
-        string mensajeDescifrado = Descifrar(mensajeCifradoInput, 7);
+        string mensajeDescifrado = Descifrar(mensajeCifradoInput, distancia);
         Console.WriteLine("Mensaje descifrado: " + mensajeDescifrado);
     }
 
